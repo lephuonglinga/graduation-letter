@@ -639,6 +639,49 @@
       .forEach((el) => el.classList.remove("is-revealed"));
   }
 
+  /* Background music — starts on load when allowed, then unlocks on first gesture */
+  const MUSIC_VOLUME = 0.35;
+
+  function playBackgroundMusic() {
+    const music = $("background-music");
+    if (!music) return Promise.resolve(false);
+
+    music.volume = MUSIC_VOLUME;
+    music.loop = true;
+
+    const playPromise = music.play();
+    if (!playPromise || typeof playPromise.then !== "function") {
+      return Promise.resolve(true);
+    }
+
+    return playPromise
+      .then(() => true)
+      .catch(() => false);
+  }
+
+  function setupBackgroundMusic() {
+    const music = $("background-music");
+    if (!music) return;
+
+    music.volume = MUSIC_VOLUME;
+    music.loop = true;
+    playBackgroundMusic();
+
+    const unlockMusic = () => {
+      playBackgroundMusic().then((didPlay) => {
+        if (didPlay) {
+          document.removeEventListener("pointerdown", unlockMusic);
+          document.removeEventListener("keydown", unlockMusic);
+          document.removeEventListener("touchstart", unlockMusic);
+        }
+      });
+    };
+
+    document.addEventListener("pointerdown", unlockMusic);
+    document.addEventListener("keydown", unlockMusic);
+    document.addEventListener("touchstart", unlockMusic);
+  }
+
   /* Envelope open / close — session only (no localStorage) */
   let isOpen = false;
   let lastFocus = null;
@@ -728,6 +771,7 @@
     requestAnimationFrame(tickPetals);
     renderInvitation();
     bindInteractions();
+    setupBackgroundMusic();
   }
 
   if (document.readyState === "loading") {
