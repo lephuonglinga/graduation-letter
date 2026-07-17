@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 70" fill="none">
+  <!-- Delicate pale leafy sprig / tiny branch -->
+  <g class="plant branch">
+    <!-- Central spine -->
+    <path
+      class="spine"
+      d="M18 68 C17 50, 19 30, 18 4"
+      stroke="#d8e2f5"
+      stroke-width="1.2"
+      stroke-linecap="round"
+      fill="none"
+    />
+
+    <!-- Paired oval leaves along the spine -->
+    <ellipse cx="11" cy="58" rx="5" ry="2.8" fill="#d8e2f5" transform="rotate(-25 11 58)" />
+    <ellipse cx="25" cy="56" rx="5" ry="2.8" fill="#d8e2f5" transform="rotate(25 25 56)" />
+
+    <ellipse cx="10" cy="46" rx="4.8" ry="2.6" fill="#d8e2f5" transform="rotate(-28 10 46)" />
+    <ellipse cx="26" cy="44" rx="4.8" ry="2.6" fill="#d8e2f5" transform="rotate(28 26 44)" />
+
+    <ellipse cx="10" cy="34" rx="4.5" ry="2.4" fill="#d8e2f5" transform="rotate(-30 10 34)" />
+    <ellipse cx="26" cy="32" rx="4.5" ry="2.4" fill="#d8e2f5" transform="rotate(30 26 32)" />
+
+    <ellipse cx="11" cy="22" rx="4.2" ry="2.2" fill="#d8e2f5" transform="rotate(-32 11 22)" />
+    <ellipse cx="25" cy="20" rx="4.2" ry="2.2" fill="#d8e2f5" transform="rotate(32 25 20)" />
+
+    <ellipse cx="12" cy="12" rx="3.8" ry="2" fill="#d8e2f5" transform="rotate(-35 12 12)" />
+    <ellipse cx="24" cy="10" rx="3.8" ry="2" fill="#d8e2f5" transform="rotate(35 24 10)" />
+
+    <!-- Tip leaf -->
+    <ellipse cx="18" cy="3" rx="3.2" ry="1.8" fill="#d8e2f5" />
+  </g>
+</svg>

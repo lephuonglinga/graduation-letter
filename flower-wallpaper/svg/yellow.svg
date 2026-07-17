@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <!-- Small pale-yellow flower head — 4 soft petals + cream center -->
+  <g class="head">
+    <g class="petals">
+      <path
+        fill="#f0e68c"
+        d="M20,8 C23,8 26,12 26,16 C26,20 22,24 20,26 C18,24 14,20 14,16 C14,12 17,8 20,8 Z"
+      />
+      <path
+        fill="#f0e68c"
+        d="M20,8 C23,8 26,12 26,16 C26,20 22,24 20,26 C18,24 14,20 14,16 C14,12 17,8 20,8 Z"
+        transform="rotate(90 20 20)"
+      />
+      <path
+        fill="#f0e68c"
+        d="M20,8 C23,8 26,12 26,16 C26,20 22,24 20,26 C18,24 14,20 14,16 C14,12 17,8 20,8 Z"
+        transform="rotate(180 20 20)"
+      />
+      <path
+        fill="#f0e68c"
+        d="M20,8 C23,8 26,12 26,16 C26,20 22,24 20,26 C18,24 14,20 14,16 C14,12 17,8 20,8 Z"
+        transform="rotate(270 20 20)"
+      />
+    </g>
+    <circle class="center" cx="20" cy="20" r="4.5" fill="#e8ed9a" />
+  </g>
+</svg>

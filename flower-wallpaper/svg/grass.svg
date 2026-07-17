@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 55" fill="none">
+  <!-- Grass tuft: 5 blades radiating from a shared base -->
+  <g class="plant grass-tuft">
+    <path
+      class="blade"
+      d="M20 54 C18 40, 12 22, 8 4"
+      stroke="#2f5c3e"
+      stroke-width="1.6"
+      stroke-linecap="round"
+      fill="none"
+    />
+    <path
+      class="blade"
+      d="M20 54 C19 38, 16 20, 14 2"
+      stroke="#2f5c3e"
+      stroke-width="1.7"
+      stroke-linecap="round"
+      fill="none"
+    />
+    <path
+      class="blade"
+      d="M20 54 C20 36, 20 18, 20 1"
+      stroke="#2f5c3e"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      fill="none"
+    />
+    <path
+      class="blade"
+      d="M20 54 C21 38, 24 20, 26 2"
+      stroke="#2f5c3e"
+      stroke-width="1.7"
+      stroke-linecap="round"
+      fill="none"
+    />
+    <path
+      class="blade"
+      d="M20 54 C22 40, 28 22, 32 5"
+      stroke="#2f5c3e"
+      stroke-width="1.6"
+      stroke-linecap="round"
+      fill="none"
+    />
+  </g>
+</svg>

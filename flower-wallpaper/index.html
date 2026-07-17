@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Thư mời lễ tốt nghiệp — Lê Phương Thảo Linh" />
+  <title>Thư mời tốt nghiệp — Lê Phương Thảo Linh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Shared daisy symbol for panel decorations -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" style="position:absolute">
+    <symbol id="icon-daisy" viewBox="0 0 64 64">
+      <ellipse cx="32" cy="14" rx="6" ry="13" fill="#ffffff"/>
+      <ellipse cx="32" cy="14" rx="6" ry="13" fill="#ffffff" transform="rotate(36 32 32)"/>
+      <ellipse cx="32" cy="14" rx="6" ry="13" fill="#ffffff" transform="rotate(72 32 32)"/>
+      <ellipse cx="32" cy="14" rx="6" ry="13" fill="#ffffff" transform="rotate(108 32 32)"/>
+      <ellipse cx="32" cy="14" rx="6" ry="13" fill="#ffffff" transform="rotate(144 32 32)"/>
+      <ellipse cx="32" cy="14" rx="6" ry="13" fill="#ffffff" transform="rotate(180 32 32)"/>
+      <ellipse cx="32" cy="14" rx="6" ry="13" fill="#ffffff" transform="rotate(216 32 32)"/>
+      <ellipse cx="32" cy="14" rx="6" ry="13" fill="#ffffff" transform="rotate(252 32 32)"/>
+      <ellipse cx="32" cy="14" rx="6" ry="13" fill="#ffffff" transform="rotate(288 32 32)"/>
+      <ellipse cx="32" cy="14" rx="6" ry="13" fill="#ffffff" transform="rotate(324 32 32)"/>
+      <circle cx="32" cy="32" r="9" fill="#ffce00"/>
+    </symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="5" width="17" height="15.5" rx="2"/>
+      <path d="M8 3.5v3M16 3.5v3M3.5 10h17"/>
+    </symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s-6.5-5.2-6.5-10A6.5 6.5 0 0 1 12 4.5 6.5 6.5 0 0 1 18.5 11c0 4.8-6.5 10-6.5 10z"/>
+      <circle cx="12" cy="11" r="2.25"/>
+    </symbol>
+    <symbol id="icon-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2.5 10.5 12 5.5l9.5 5-9.5 5-9.5-5z"/>
+      <path d="M6.5 12.5v4.2c0 .7 2.4 2.3 5.5 2.3s5.5-1.6 5.5-2.3v-4.2"/>
+      <path d="M21.5 10.5v5.2"/>
+    </symbol>
+  </svg>
+
+  <!-- Soft daisy wallpaper (decorative) -->
+  <div id="wallpaper" class="wallpaper" aria-hidden="true">
+    <div id="flora-layer" class="flora-layer"></div>
+    <div id="petal-layer" class="petal-layer"></div>
+  </div>
+
+  <!-- ===== Envelope screen ===== -->
+  <section
+    id="envelope-screen"
+    class="envelope-screen"
+    aria-label="Phong thư mời"
+  >
+    <button
+      type="button"
+      id="envelope-btn"
+      class="envelope-btn"
+      aria-label="Chạm để mở thư mời"
+      aria-expanded="false"
+      aria-controls="invitation-screen"
+    >
+      <div class="envelope" id="envelope">
+        <svg
+          class="envelope-svg"
+          viewBox="0 0 320 220"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <!-- Envelope body -->
+          <rect class="env-body" x="20" y="55" width="280" height="145" rx="6" fill="#f7f9ff" stroke="#a8b8e0" stroke-width="2" />
+          <!-- Letter paper peeking -->
+          <rect class="env-paper" x="42" y="72" width="236" height="110" rx="3" fill="#ffffff" />
+          <!-- Left / right crease hints -->
+          <path d="M20 55 L160 155 L20 200" fill="#eef2fc" stroke="#a8b8e0" stroke-width="1.5" opacity="0.55" />
+          <path d="M300 55 L160 155 L300 200" fill="#e8eefc" stroke="#a8b8e0" stroke-width="1.5" opacity="0.55" />
+          <!-- Top flap — hinges at top edge, opens upward -->
+          <g class="env-flap-group">
+            <path
+              class="env-flap"
+              d="M20 55 L160 155 L300 55 Z"
+              fill="#e8eefc"
+              stroke="#a8b8e0"
+              stroke-width="2"
+              stroke-linejoin="round"
+            />
+            <path
+              class="env-flap-edge"
+              d="M32 58 L160 145 L288 58"
+              fill="none"
+              stroke="#c5d0ee"
+              stroke-width="1.5"
+              opacity="0.65"
+            />
+          </g>
+          <!-- Wax seal — fades out when opening -->
+          <g class="env-seal" transform="translate(160, 118)">
+            <circle r="28" fill="#7b8fd4" />
+            <circle r="22" fill="#8fa0dc" />
+            <text
+              text-anchor="middle"
+              dominant-baseline="central"
+              font-family="Georgia, 'Times New Roman', serif"
+              font-size="16"
+              font-weight="700"
+              fill="#ffffff"
+            >TL</text>
+          </g>
+          <!-- Tiny daisy accents -->
+          <g opacity="0.85" transform="translate(48, 180)">
+            <ellipse cx="0" cy="-7" rx="2.5" ry="5.5" fill="#fff" />
+            <ellipse cx="0" cy="-7" rx="2.5" ry="5.5" fill="#fff" transform="rotate(60)" />
+            <ellipse cx="0" cy="-7" rx="2.5" ry="5.5" fill="#fff" transform="rotate(120)" />
+            <circle r="3" fill="#ffce00" />
+          </g>
+          <g opacity="0.85" transform="translate(272, 180)">
+            <ellipse cx="0" cy="-7" rx="2.5" ry="5.5" fill="#fff" />
+            <ellipse cx="0" cy="-7" rx="2.5" ry="5.5" fill="#fff" transform="rotate(60)" />
+            <ellipse cx="0" cy="-7" rx="2.5" ry="5.5" fill="#fff" transform="rotate(120)" />
+            <circle r="3" fill="#ffce00" />
+          </g>
+        </svg>
+      </div>
+      <span class="envelope-hint" id="envelope-hint">Chạm để mở</span>
+    </button>
+  </section>
+
+  <!-- ===== Invitation content ===== -->
+  <main
+    id="invitation-screen"
+    class="invitation-screen"
+    hidden
+    aria-hidden="true"
+    tabindex="-1"
+  >
+    <div class="invitation-shell">
+      <header class="invite-topbar">
+        <button type="button" id="btn-close" class="btn-ghost" aria-label="Đóng và xem lại phong thư">
+          ← Phong thư
+        </button>
+      </header>
+
+      <article class="invite-card letter-paper" id="invite-card">
+        <!-- Grand letter masthead -->
+        <header class="letter-masthead" aria-labelledby="letter-main-title">
+          <div class="masthead-ornament" aria-hidden="true">
+            <svg class="masthead-daisy" viewBox="0 0 64 64" width="28" height="28"><use href="#icon-daisy"/></svg>
+            <span class="masthead-rule"></span>
+            <svg class="masthead-daisy" viewBox="0 0 64 64" width="28" height="28"><use href="#icon-daisy"/></svg>
+          </div>
+          <p class="masthead-eyebrow">Trân trọng gửi đến bạn</p>
+          <h1 id="letter-main-title" class="letter-main-title">
+            Thư mời dự<br />Lễ Tốt Nghiệp
+          </h1>
+          <p class="masthead-name" id="masthead-name"></p>
+          <div class="masthead-ornament masthead-ornament--bottom" aria-hidden="true">
+            <span class="masthead-rule"></span>
+            <span class="masthead-diamond">✦</span>
+            <span class="masthead-rule"></span>
+          </div>
+        </header>
+
+        <!-- Soft letter opening -->
+        <section class="panel letter-intro reveal" aria-labelledby="intro-title">
+          <div class="panel-deco" aria-hidden="true">
+            <svg class="panel-daisy panel-daisy--l" viewBox="0 0 64 64" width="34" height="34"><use href="#icon-daisy"/></svg>
+            <svg class="panel-daisy panel-daisy--r" viewBox="0 0 64 64" width="34" height="34"><use href="#icon-daisy"/></svg>
+          </div>
+          <p class="letter-intro-eyebrow">Lời mở đầu</p>
+          <h2 id="intro-title" class="letter-intro-title">Cảm ơn bạn đã mở thư</h2>
+          <p class="letter-intro-body" id="intro-message"></p>
+        </section>
+
+        <!-- Journey of 3 chapters — left rail + narrowed cards -->
+        <div class="journey" aria-label="Hành trình ba chặng">
+          <div class="journey-rail" aria-hidden="true"></div>
+
+          <div class="journey-stop reveal">
+            <div class="journey-node journey-node--dawn" aria-hidden="true"><span>1</span></div>
+            <section class="panel chapter chapter--dawn" aria-labelledby="ch1-title">
+              <div class="panel-deco" aria-hidden="true">
+                <svg class="panel-daisy panel-daisy--l" viewBox="0 0 64 64" width="34" height="34"><use href="#icon-daisy"/></svg>
+                <svg class="panel-daisy panel-daisy--r" viewBox="0 0 64 64" width="34" height="34"><use href="#icon-daisy"/></svg>
+              </div>
+              <figure class="chapter-media">
+                <img id="story-img-1" class="chapter-photo" src="assets/story-1.png" alt="Ngày đầu tiên" />
+              </figure>
+              <div class="chapter-body">
+                <p class="chapter-label">Chặng 01</p>
+                <h2 id="ch1-title" class="chapter-title">Ngày đầu tiên</h2>
+                <div class="chapter-text" id="story-1-text"></div>
+              </div>
+            </section>
+          </div>
+
+          <div class="journey-stop reveal">
+            <div class="journey-node journey-node--years" aria-hidden="true"><span>2</span></div>
+            <section class="panel chapter chapter--years" aria-labelledby="ch2-title">
+              <div class="panel-deco" aria-hidden="true">
+                <svg class="panel-daisy panel-daisy--l" viewBox="0 0 64 64" width="34" height="34"><use href="#icon-daisy"/></svg>
+                <svg class="panel-daisy panel-daisy--r" viewBox="0 0 64 64" width="34" height="34"><use href="#icon-daisy"/></svg>
+              </div>
+              <figure class="chapter-media">
+                <img id="story-img-2" class="chapter-photo" src="assets/story-2.png" alt="Những năm tháng không thể nào quên" />
+              </figure>
+              <div class="chapter-body">
+                <p class="chapter-label">Chặng 02</p>
+                <h2 id="ch2-title" class="chapter-title">Những năm tháng không thể nào quên</h2>
+                <div class="chapter-text" id="story-2-text"></div>
+              </div>
+            </section>
+          </div>
+
+          <div class="journey-stop reveal">
+            <div class="journey-node journey-node--horizon" aria-hidden="true"><span>3</span></div>
+            <section class="panel chapter chapter--horizon" aria-labelledby="ch3-title">
+              <div class="panel-deco" aria-hidden="true">
+                <svg class="panel-daisy panel-daisy--l" viewBox="0 0 64 64" width="34" height="34"><use href="#icon-daisy"/></svg>
+                <svg class="panel-daisy panel-daisy--r" viewBox="0 0 64 64" width="34" height="34"><use href="#icon-daisy"/></svg>
+              </div>
+              <figure class="chapter-media">
+                <img id="story-img-3" class="chapter-photo" src="assets/story-3.png" alt="Chương mới sắp mở ra" />
+              </figure>
+              <div class="chapter-body">
+                <p class="chapter-label">Chặng 03</p>
+                <h2 id="ch3-title" class="chapter-title">Chương mới sắp mở ra</h2>
+                <div class="chapter-text" id="story-3-text"></div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- Thanks -->
+        <section class="panel thanks reveal" aria-labelledby="thanks-title">
+          <div class="panel-deco" aria-hidden="true">
+            <svg class="panel-daisy panel-daisy--l" viewBox="0 0 64 64" width="34" height="34"><use href="#icon-daisy"/></svg>
+            <svg class="panel-daisy panel-daisy--r" viewBox="0 0 64 64" width="34" height="34"><use href="#icon-daisy"/></svg>
+          </div>
+          <h2 id="thanks-title" class="thanks-title">Lời cảm ơn</h2>
+          <p class="thanks-body" id="thanks-message"></p>
+          <p class="thanks-body thanks-body--emphasis" id="thanks-message-emphasis"></p>
+        </section>
+
+        <!-- Formal invitation -->
+        <section class="panel formal-invite reveal" aria-labelledby="formal-title">
+          <div class="panel-deco" aria-hidden="true">
+            <svg class="panel-daisy panel-daisy--l" viewBox="0 0 64 64" width="34" height="34"><use href="#icon-daisy"/></svg>
+            <svg class="panel-daisy panel-daisy--r" viewBox="0 0 64 64" width="34" height="34"><use href="#icon-daisy"/></svg>
+          </div>
+          <div class="formal-badge" aria-hidden="true">
+            <svg class="formal-badge-icon" viewBox="0 0 24 24" width="28" height="28"><use href="#icon-cap"/></svg>
+          </div>
+          <h2 id="formal-title" class="formal-title">Trân trọng kính mời</h2>
+          <p class="formal-lead" id="formal-lead"></p>
+          <ul class="event-meta">
+            <li>
+              <span class="event-meta-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-calendar"/></svg>
+              </span>
+              <div>
+                <span class="event-meta-label">Thời gian</span>
+                <span class="event-meta-value" id="datetime"></span>
+              </div>
+            </li>
+            <li>
+              <span class="event-meta-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20"><use href="#icon-pin"/></svg>
+              </span>
+              <div>
+                <span class="event-meta-label">Địa điểm</span>
+                <a
+                  id="venue"
+                  class="event-meta-value detail-link"
+                  href="https://maps.app.goo.gl/BsUVkH4B65VdQy7J8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></a>
+              </div>
+            </li>
+          </ul>
+          <a
+            id="btn-venue-maps"
+            class="btn btn-secondary btn-maps-inline"
+            href="https://maps.app.goo.gl/BsUVkH4B65VdQy7J8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Xem bản đồ hội trường</a>
+          <p class="formal-gift" id="formal-gift"></p>
+        </section>
+
+        <!-- Parking — secondary -->
+        <section class="panel parking parking--secondary reveal" aria-labelledby="parking-title">
+          <div class="parking-badge" id="parking-badge"></div>
+          <h2 id="parking-title" class="section-title parking-title">
+            Thông tin địa điểm và thông tin gửi xe
+          </h2>
+          <dl class="parking-grid">
+            <div class="parking-row">
+              <dt>Địa chỉ bãi xe</dt>
+              <dd id="parking-address"></dd>
+            </div>
+            <div class="parking-row">
+              <dt>Lối vào</dt>
+              <dd id="parking-entrance"></dd>
+            </div>
+            <div class="parking-row">
+              <dt>Phí / giờ mở cửa</dt>
+              <dd id="parking-fee"></dd>
+            </div>
+            <div class="parking-row">
+              <dt>Đi bộ tới hội trường</dt>
+              <dd id="parking-walk"></dd>
+            </div>
+          </dl>
+          <a
+            id="btn-maps"
+            class="btn btn-secondary"
+            href="https://maps.app.goo.gl/XaPkGANQzvsbf9Qm6"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Xem bản đồ bãi xe</a>
+        </section>
+
+        <footer class="invite-footer reveal">
+          <p class="footer-regard">Trân trọng,</p>
+          <p class="footer-name" id="footer-sign"></p>
+          <p class="footer-contact">
+            Liên hệ:
+            <a id="contact-phone" class="detail-link" href="#"></a>
+          </p>
+        </footer>
+      </article>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
